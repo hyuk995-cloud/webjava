@@ -1,0 +1,17 @@
+입력 메서드
+
+1. Scanner 호출
+import java.util.Scanner;
+
+2. 
+Scanner클래스 -- 사용자 입력, 파일/문자열 데이터 로드시
+   (System.in) : 표준입력 스트림(키보드)
+   new Scanner() : Scanner 객체 생성
+
+3. 
+next() -- 공백전까지의 문자열
+nextLine() -- 줄 전체(enter까지)
+nextInt() --
+nextDouble()
+nextBoolean()
+--> 메모리 누수 방지 -- 사용후 Scanner 객체 닫기 (.close() )
