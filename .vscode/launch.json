@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ScannerBasic",
+            "request": "launch",
+            "mainClass": "javabasicB.ScannerBasic",
+            "projectName": "webjava_bdf89440"
+        },
+        {
+            "type": "java",
             "name": "Run (Integrated Terminal)",
             "request": "launch",
             "mainClass": "${file}",
