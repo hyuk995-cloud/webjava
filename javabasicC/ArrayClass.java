@@ -39,8 +39,8 @@ public class ArrayClass {
 
         System.out.println("\n ==== Arrays.binarySerach() ====");
         int[] arr9 = {10, 20, 30, 40, 50, 60, 70};
-        int index1 = Arrays.binarySearch(arr9, 40); // 3 출력
-        int index2 = Arrays.binarySearch(arr9, 35); // 음수 출력(없는 값)
+        // int index1 = Arrays.binarySearch(arr9, 40); // 3 출력
+        // int index2 = Arrays.binarySearch(arr9, 35); // 음수 출력(없는 값)
     }
     
     
