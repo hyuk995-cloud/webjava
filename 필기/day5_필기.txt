@@ -1,0 +1,113 @@
+BankAccout.java
+
+은행을 만들다고 할때
+전체 계좌수
+계좌번호(다음) ------- 공유 (private static)
+
+계좌 번호
+예금주
+잔액 ----------- private
+
+생성자(계좌 만들기) (예금주 : 문자, 잔액 : 정수) 계좌 만들기 -- println()
+
+입금 ( 금액:정수 )
+출금 ( 금액:정수 )
+이체 ( 계좌 만들기의 예금주 금액:정수 )
+---위에 void 넣어야함----
+
+계좌 정보 출력 --- println();
+
+전체 계좌 수 조회 public static int
+이자 계산 public static int
+=============================================================
+클래스 선언시
+  ** 동일명의 생성자 선언에는 void입력 하지 않음 **
+
+안됨
+int[] arry;
+arry = {1, 2, 3} --> 컴파일 에러
+=-------------
+됨
+int[] arry = {1, 2, 3}  
+
+or
+
+int[] arry;
+arry = new int[]{1, 2, 3}
+
+int[] arr1 = {1, 2, 3}
+int[] arr2 = {1, 2, 3}
+
+Student[] student = new Student
+student[0] = new student();
+student[0] = "홍길동"
+
+================================================
+
+메서드 선언, 호출
+메서드 오버로딩
+getter / setter 메서드
+this, this()
+
+랜덤(난수)함수 Math.random()
+1~100 난수를 뽑을 때 
+(int)(Math.random()*100)+1
+
+overloading
+ 매개변수 개수가 다를 때
+ 매개변수 타입이(종류) 다를 때
+ 매개변수 순서가 다를 때 (타입 구분 가능)
+  같은 메서드 이름으로 구분 실행 가능
+
+getter, setter ( private로 숨기고 public 메서드로 접근 하게 하는 방법 ---> 캡슐화) 
+get - 필드명, set - 필드명 -- 보안, 유효성검증, 내부 구현변경,// get 필드명, boolan타입은 is 필드명() -- 대소문자 구분
+
+메서드(입금, 출금, 예금 나눠서 만들었음) - 모듈화(작은 기능 단위로 나누기)
+ : 중복 제거 / 가독성 향상(가독성 중요) / 유지보수 용이
+ 생성자 -- 초기 설정
+
+
+public class Exam(){
+    public Exam(){
+        System.out.println("생성자 호출")
+    }
+    public void Exam(){
+        Systme.out.println("메서드 호출")
+    }
+    public static void main(String[] args){
+        Exam obj = new Exam() // 생성자
+        obj.Exam() // 메서드
+    }
+}
+
+car 클래스
+ 제조사 :company
+ 모델명 model
+ 색상 color
+ 최고속도 maxSpeed
+ 현재속도 currentSpeed
+
+
+
+
+this --- 현재 객체 호출키워드
+this() -- 생성자 호출
+
+public class Sthuden{
+    String name;
+    int grade;
+    String major;
+    public Student(String name){
+        this(name, 1, "미정");
+    }
+}
+
+
+
+
+
+
+isEmpty == "" 공란이름
+
+
+
