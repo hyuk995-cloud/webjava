@@ -1,0 +1,102 @@
+상속과 다형성
+   부모 클래스의 속성과 기능을 자식( 새 클래스 )이 물려받는 것
+   
+   동물 -- 포유류 - 개 / 고양이
+        -- 양서류 - 도마뱀 / 개구리
+   쇼핑몰 느낌 - 음식 - 유통기한
+                전자제품 - 상품보증기간 같은 느낌
+    ---- 코드 재사용성 ( 중복 코드 줄이기, 관리 가능)
+         유지보수용이 ( 부모 클래스 수정 -> 모든 자식에 반영 )
+         계층구조 ( 관계표현 )
+         확장성
+** 클래스 상속 구조 **         
+public class 자식 클래스 extends 부모클래스 {
+    자식만 가지는 추가 필드
+    자식만 가지는 추가 메서드
+}
+---------------------------------------------------------------
+메서드 오버라이딩 : 부모클래스 메서드를 자식에서 재정의 하는 것
+  ** 같은 이름 / ** 같은 매개변수 / ** 같은 반환타입
+     ( 동물 소리내기 ---> 개(멍멍),  고양이(야옹)) : 자식에 특화
+--------------------------------------------------------------
+자식에서 부모 생성자 호출 
+    super(매개변수) -> 부모클래스 생성자 호출
+    자식 생성자의 첫 번째 줄에서만 사용 가능.
+    생략시 super() 자동호출
+    super.필드명  --- 부모 필드 접근
+    super.메서드명() --- 부모 메서드 호출키워드
+
+*** 부모클래스 상속 시 private 필드 : 자식 접근 불가
+                    protected 필드 : 자식 사용(상속)
+                    public static(공용) final double PI = ~ : 상수 (변경 불가)
+                    public static(공용) final int MAX_STUDENTS = 30 (일반적으로 상수는 대문자로 쓴다.)
+                    public final void finalMethod(){} : 오버라이딩 불가
+                    public final class finalClass{} : 상속 불가
+
+=========================
+class Employee{
+    String name;
+    int salary;
+    void work(){}
+}
+
+class Manager{
+    String name;
+    int salary;
+    void work(){}
+    void manage(){}
+}
+
+class Developer{
+    String name;
+    int salary;
+    void work(){}
+    void code(){}
+}
+
+---------------------- 중복되는게 많음 아래와 같이 정리 가능
+
+class Employee{
+    protected String name;
+    protected int salary;
+
+    public Employee(String name, int salary){
+        this.name = name;
+        this.salary = salary;
+    }
+    public void work(){
+        System.out.println("~");
+    }
+}
+
+class Manager extends Employee{
+    public Manager(String name, int salary){
+        super(name, salary);
+    }
+    public void manage(){
+        System.out.println("~");
+    }
+}
+
+class Developer extends Employee{
+    public Developer(String name, int salary){
+        super(name, salary);
+    }
+    public void code(){
+        System.out.println("~");
+    }
+}
+
+=====================================================
+instanceof 타입 연산자 (true / false)
+ --- 객체 instanceof 클래스 타입
+ ** 다운 캐스팅 : 상위 타입 변수를 하위 타입으로 변환 / 업 캐스팅(자동)
+
+ class Parent{}
+ class Child extends Parent{ void abc(){} }
+
+ Parent p = new Child(); // 업캐스팅
+ child c = (child) p ; // 다운 캐스팅
+ c.abc()
+
+
