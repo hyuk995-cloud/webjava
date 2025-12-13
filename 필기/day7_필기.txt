@@ -1,0 +1,101 @@
+1. 추상 클래스의 ( Abstract class) ★★★★★★
+    : 여러 클래스가 공통으로 가져야 할 속성 (필드)
+    메서드의 기본 뼈대를 제공
+    자식 클래스가 상속받아서 완성
+
+    public abstract void 메서드명(); -- 추상메서드 선언
+
+   --> 프레임워크 설계(템플릿), 게임 캐릭터 시스템,
+   ui 컴포넌트 기반클래스, 비즈니스 로직, 공통 로직
+       
+- javabasicG (A) 참고
+
+2. 인터페이스( implements, interface) ★★★★★★
+    : 다중 상속 필요시, 기능명세서
+    -- 모든 메서드(함수)가 추상메서드 (public abstract )
+    -- 모든 필드는 상수 ( public static final)
+    생성자 없음
+    다중 구현 가능 / 인터페이스 끼리 상속이 가능
+
+-- javabasicG (B ~ C) 참조
+
+3. 익명클래스
+    : 일회용 간단한 구현 - new interface(){...}
+    -- 이벤트 리스너, 간단한 콜벡 / 재사용성은 없음
+    =================================================
+    일반 방법
+    interface ClickListener{
+        void onClick();
+    }
+    class SaveButtonListener implements ClickListener{
+        public void onClick(){
+            저장..
+        }
+    }
+
+    ClickListener Listener = new SaveButtonListener()
+
+    -------------------------------------------------
+    익명클래스
+    ClickListener Listener = new ClickListener(){
+        @Overide
+        public void onClick(){
+            저장...
+        }
+    }
+    =================================================
+
+    button.addEventListener(new ActionListener(){
+        @Override
+        public void actionPerformece(ActionEvent e){
+            실행코드
+        }
+    });
+
+-- javabasicG (D) 참조
+
+
+4. 예외처리 : (try-catch 구문)
+    예외 : 프로그램 실행 중 발생하는 오류
+    처리 안할 경우 : 프로그램이 강제 종료;
+    처리 : 계속 실행
+
+    try{
+        오류 없는 경우 실행 명령
+        catch(){
+            오류 발생시 
+        }
+    }
+
+    Interger : 정수형 포장 클래스
+    parseInt(String) : 문자열을 기본 int로 변환
+    nextLine() -- 줄 전체(enter까지)읽어서 문자열로 반환
+    숫자타입 예외(NumberFormatException)
+
+
+
+5. ArrayList ( 동적 배열 )
+    java.util.ArrayList
+        생성
+        ArrayList<String> 배열명 = new ArrayList<>()
+        데이터 추가 명령 (add)
+        데이터 삭제 명령 (remove(순서))
+        데이터 호출 명령 (get)
+        데이터 갱순(수정)명령 (set(순서, 데이터))
+        크기 가변*조정 (size())
+
+    일반 배열 -- 타입[] 배열명 = new 타입[number]
+    컬렉션 배열 -- add, remove 자동으로 크기 조절
+                  개수 불러올때 배열명.size()
+
+6. HashMap --- 
+    key 로 빠르게 검색(찾기), 관리
+
+    HashMap<키타입, 값타입> 배열명 = new HashMap<>();
+     --> import java.util.HashMap;
+         import java.util.Map;
+      people{
+        이름(키값) : "홍길동"(벨류)
+
+      }
+

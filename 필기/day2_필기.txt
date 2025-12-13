@@ -23,7 +23,7 @@ Scanner클래스 -- 사용자 입력, 파일/문자열 데이터 로드시
 
 3. 
 next() -- 공백전까지의 문자열
-nextLine() -- 줄 전체(enter까지)
+nextLine() -- 줄 전체(enter까지)읽어서 문자열로 반환
 nextInt() --
 nextDouble()
 nextBoolean()
