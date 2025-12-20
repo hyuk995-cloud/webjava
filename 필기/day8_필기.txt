@@ -1,0 +1,100 @@
+ArrayList -- 순서있는 가변 배열 목록,
+HashMap -- 키로 값을 찾기
+Map -- 키 - 벨류 자료 구조 인터페에스
+HashSet -- 중복 제거, 순서 없음
+===================================
+1. 람다식 기본 문법 - 코드 단순화, 가독성 향상  => javabasicH CLambdaCore 참조
+   기본구조
+   ( 매개변수 ) -> {
+    실행문
+   }
+-----------------------------------
+  타입 생략 가능, 실행 명령이 1줄이면 {}, return 생략 가능
+  매개변수가 1개면 () 생략 가능
+    => ex) x -> x*2
+    => {int a, int b} -> {return a+b;}
+       (a, b) -> {return a+b;}
+       (a, b) -> a + b
+
+  추상메서드 1개만 구현 가능
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+2. 스레드 개념 - 동시 작업
+    스레드.start() -- 새 스레드 시작(동시 실행)
+    스레드.run() -- 새 스레드 생성 X, 메인 스레드에서 순차적으로 실행
+    스레드.sleep(밀리초) -- 일시 정지(지연 실행, 리소스 해제, 동기화) 
+
+    Thread data = new Thread(()->{
+        for(int i=1; i<=5, i++){
+            System.out.println("~~~~);
+            sleep(500);
+        }
+    });
+    static void sleep(int ms){
+        try{
+            thread.sleep(ms);
+        }catch(InterrupredException e){{
+            e.~~~
+        }
+
+        }
+    }
+-----------------------------------------------------------------
+
+3. 파일 읽기/쓰기
+------------------아래는 기초-----------------------------------
+입력 받기 - java.util.Scanner
+랜덤 받기 - java.util.Random -> (javabasicH - EDice)
+날짜/시간 - java.time.LocalDate, LocalDateTime (EDice)
+파일 입출력 - java.io.File, FileWritter, Scanner
+
+------------------------------아래는 회사---------------------------
+컬렉션 - java.util.List, ArrayList, HashMap, HashSet(데이터 관리)
+날짜시간 - java.time.*
+파일 입출력 - java.io.*
+네트워크 - java.net.* (서버 통신, URL 처리)
+숫자/날짜 포맷 - java.text.*
+스트림 - java.util.stream.* (데이터 가공처리)
+병렬처리 - java.util.concurrent.* (스레드, 동시성 제어)
+JSON 처리 - com.fasterxml.jackson.*( 객체 <-> JSON 변환)
+getter/setter 자동처리 - lombok.*
+
+===============================================================================
+
+할일 관리 프로그램
+목록 - 읽기
+      추가 / 수정 / 삭제
+      메모장 파일 저장
+
+1. 할 일 보기
+2. 할 일 추가
+3. 할 일 수정
+4. 할 일 삭제
+5. 프로그램 종료
+
+-- java.io.FileWritter -- 파일에 글 쓰는 클래스
+   java.io.IOException -- 입출력 예외 처리
+   java.io.BuffereWritter -- 빠르게 쓰기 위한 클래스
+           FileterReader / BuffereReader / File
+   java.time.LocalDateTime -- 시간, 날짜 인식 클래스
+   java.time.format.DateTimeFormatter -- 날짜 형식 지정 클래스
+   java.util.Scanner -- 입력
+
+   "2025-12-14 16:30:15 || 자바예제 공부하기
+   파일 로드 --> loadTodoFile()
+   보기 --> 
+   추가 --> 
+   수정 --> 
+   삭제 --> deleteTodos()
+   저장 --> saveTodoFile()
+
+   todoList.forEach( (todo) -> {
+    try{
+        writer.write(todo)
+        writer.newLine();
+    } catch (IOException e){
+        System.out.println("할 일 쓰기 중 오류 발생 !");
+    }
+   })

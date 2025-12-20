@@ -81,14 +81,14 @@
         데이터 추가 명령 (add)
         데이터 삭제 명령 (remove(순서))
         데이터 호출 명령 (get)
-        데이터 갱순(수정)명령 (set(순서, 데이터))
+        데이터 갱신(수정)명령 (set(순서, 데이터))
         크기 가변*조정 (size())
 
     일반 배열 -- 타입[] 배열명 = new 타입[number]
     컬렉션 배열 -- add, remove 자동으로 크기 조절
                   개수 불러올때 배열명.size()
 
-6. HashMap --- 
+6. HashMap ---  -javabasicH APhoneBook 참조
     key 로 빠르게 검색(찾기), 관리
 
     HashMap<키타입, 값타입> 배열명 = new HashMap<>();
@@ -98,4 +98,6 @@
         이름(키값) : "홍길동"(벨류)
 
       }
+
+
 
